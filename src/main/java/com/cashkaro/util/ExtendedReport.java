@@ -9,7 +9,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 public class ExtendedReport {
 	
 	
-	public static final ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(new File(System.getProperty("user.dir")+"/clearTrip-Reports.html"));
+	public static final ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(new File(System.getProperty("user.dir")+"/cashKaro-Reports.html"));
 	public static final ExtentReports extent = new ExtentReports();
 	public static ExtentTest test;
 	

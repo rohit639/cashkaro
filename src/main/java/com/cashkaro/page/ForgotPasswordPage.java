@@ -14,7 +14,7 @@ public class ForgotPasswordPage extends BasePage {
 	@FindBy(xpath=Locators.ForgotPasswordPage.header)
 	private WebElement header;
 	
-	@FindBy(className=Locators.ForgotPasswordPage.frame)
+	@FindBy(xpath=Locators.ForgotPasswordPage.frame)
 	private WebElement frame;
 	
 	@FindBy(id=Locators.ForgotPasswordPage.fromEmail)

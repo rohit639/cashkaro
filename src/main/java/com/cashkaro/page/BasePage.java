@@ -26,8 +26,6 @@ public class BasePage {
 	@FindBy(id=Locators.BasePage.signIn)
 	public WebElement signIn;
 	
-	@FindBy(className = Locators.BasePage.cancelPop)
-	public WebElement cancelsplDeal;
 	
 	public BasePage() {
 	

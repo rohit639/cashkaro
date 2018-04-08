@@ -7,21 +7,14 @@ public class Locators {
 		public static final String footer = "lblFooterCopyRight";
 		public static final String join = "link_join";
 		public static final String signIn = "link_signin";
-		public static final String cancelPop = "dialog-btn-grp";
 		}
 
-	public class LandingPage {
-		public static final String hotelLink = "Hotels";
-		public static final String oneWay = "OneWay";
-		public static final String fromPlace = "FromTag";
-		public static final String toPlace = "ToTag";
-		public static final String searchButton = "SearchBtn";
-	}
+	
 
 	
 	public class ForgotPasswordPage {
 		public static final String header = "//h2[contains(.,'FORGOT PASSWORD?')]";
-		public static final String frame = "cboxIframe";
+		public static final String frame = "//div[@id='colorbox']//iframe";//"cboxIframe";
 		public static final String fromEmail ="from_email";
 		public static final String resetPassword = "submit_req";
 		public static final String confirmMsg = "//h2[contains(.,'EMAIL SENT WITH NEW PASSWORD')]";
