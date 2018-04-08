@@ -12,7 +12,7 @@ public class LandingPage extends BasePage  {
 	public LandingPage() {
 		
 	PageFactory.initElements(BaseWebdriver.getDriver(), this);
-	
+	cancelsplDeal.click();
 	}
 	
 	public JoinFreePage navigateToJoinPage() {

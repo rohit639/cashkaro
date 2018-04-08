@@ -7,6 +7,7 @@ public class Locators {
 		public static final String footer = "lblFooterCopyRight";
 		public static final String join = "link_join";
 		public static final String signIn = "link_signin";
+		public static final String cancelPop = "dialog-btn-grp";
 		}
 
 	public class LandingPage {
