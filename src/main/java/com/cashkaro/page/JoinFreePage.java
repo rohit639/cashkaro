@@ -16,38 +16,37 @@ import java.util.Set;
 
 public class JoinFreePage extends BasePage {
 
-	@FindBy(xpath=Locators.JoinFreePage.faceBook)
+	@FindBy(xpath = Locators.JoinFreePage.faceBook)
 	private WebElement faceBook;
-	
-	@FindBy(id=Locators.JoinFreePage.firstName)
+
+	@FindBy(id = Locators.JoinFreePage.firstName)
 	private WebElement firstName;
-	
-	@FindBy(id=Locators.JoinFreePage.email)
+
+	@FindBy(id = Locators.JoinFreePage.email)
 	private WebElement email;
-	
-	@FindBy(id=Locators.JoinFreePage.confirmEmail)
+
+	@FindBy(id = Locators.JoinFreePage.confirmEmail)
 	private WebElement confirmEmail;
-	
-	@FindBy(id=Locators.JoinFreePage.pswd)
+
+	@FindBy(id = Locators.JoinFreePage.pswd)
 	private WebElement pswd;
-	
-	@FindBy(id=Locators.JoinFreePage.submit)
+
+	@FindBy(id = Locators.JoinFreePage.submit)
 	private WebElement submit;
-	
+
 	public JoinFreePage() {
 		PageFactory.initElements(BaseWebdriver.getDriver(), this);
 		Assert.assertTrue(FunctionLib.isElemntVisble(faceBook));
-	
+
 	}
-	
+
 	public MyAccountPage joinPage(String normalFB) {
-		if (normalFB.equalsIgnoreCase("FB")||normalFB.equalsIgnoreCase("FaceBook")) {
+		if (normalFB.equalsIgnoreCase("FB") || normalFB.equalsIgnoreCase("FaceBook")) {
 			joinViaFB();
-		} 
-		else {
+		} else {
 			FunctionLib.scrollDown();
 			firstName.sendKeys(FunctionLib.getrandomString(7, true, false));
-			String emailAdd = FunctionLib.getrandomString(7, true, true)+"@dummy.com";
+			String emailAdd = FunctionLib.getrandomString(7, true, true) + "@dummy.com";
 			email.sendKeys(emailAdd);
 			confirmEmail.sendKeys(emailAdd);
 			String pswd1 = FunctionLib.getrandomString(7, true, true);
@@ -56,8 +55,10 @@ public class JoinFreePage extends BasePage {
 			actions.click();
 			actions.sendKeys(pswd1);
 			actions.build().perform();
-			//log.info("Details provided for sign up are : \"First Name : "+getDriver().findElement(getTestLocator("SignUp.FirstName")).getAttribute("value")+"\", \"email :  "+emailAdd+"\", \"password : "+pswd+"\"");
-			// wait time for Captcha 
+			// log.info("Details provided for sign up are : \"First Name :
+			// "+getDriver().findElement(getTestLocator("SignUp.FirstName")).getAttribute("value")+"\",
+			// \"email : "+emailAdd+"\", \"password : "+pswd+"\"");
+			// wait time for Captcha
 			try {
 				Thread.sleep(8000);
 			} catch (Exception e) {
@@ -65,7 +66,7 @@ public class JoinFreePage extends BasePage {
 			}
 			submit.click();
 		}
-		
+
 		return new MyAccountPage();
 	}
 
@@ -75,12 +76,12 @@ public class JoinFreePage extends BasePage {
 		Set<String> allWindows = BaseWebdriver.getDriver().getWindowHandles();
 		for (String singleWindow : allWindows) {
 			BaseWebdriver.getDriver().switchTo().window(singleWindow);
-			if(BaseWebdriver.getDriver().getTitle().contains("Facebook")) {
-				//perform all login things
+			if (BaseWebdriver.getDriver().getTitle().contains("Facebook")) {
+				// perform all login things
 			}
 		}
-		// if window is not closing by its own 
-		//getDriver().close();
+		// if window is not closing by its own
+		// getDriver().close();
 		BaseWebdriver.getDriver().switchTo().window(mainWindow);
 	}
 }

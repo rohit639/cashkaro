@@ -26,7 +26,7 @@ public class Configuration {
 	public static String getbrowser() {
 		return browser;
 	}
-	
+
 	public static int getScript() {
 		return script;
 	}

@@ -11,12 +11,12 @@ import com.cashkaro.util.Locators;
 
 public class MyAccountPage extends BasePage {
 
-	@FindBy(id=Locators.MyAccountPage.myAccount)
+	@FindBy(id = Locators.MyAccountPage.myAccount)
 	private WebElement myAccount;
-	
+
 	public MyAccountPage() {
 		PageFactory.initElements(BaseWebdriver.getDriver(), this);
-		Assert.assertTrue(FunctionLib.isElemntVisble(myAccount),"Failed to validate element is visiable to user");
+		Assert.assertTrue(FunctionLib.isElemntVisble(myAccount), "Failed to validate element is visiable to user");
 	}
-	
+
 }

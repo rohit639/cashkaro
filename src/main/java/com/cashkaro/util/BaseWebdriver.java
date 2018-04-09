@@ -20,7 +20,8 @@ import com.sun.javafx.PlatformUtil;
 public class BaseWebdriver {
 
 	public static WebDriver driver;
-	private static final Logger logger =LoggerClass.createLogger();
+	private static final Logger logger = LoggerClass.createLogger();
+
 	@BeforeSuite(alwaysRun = true)
 	public void initializeDriver() {
 		setDriverPath();
@@ -34,12 +35,12 @@ public class BaseWebdriver {
 		else if (Configuration.getbrowser().equalsIgnoreCase("firefox"))
 			driver = new FirefoxDriver();
 		driver = registerEvents(driver);
-		
+
 		driver.get(Configuration.getUrl());
 		settingBrowser();
 	}
 
-	private WebDriver  registerEvents(WebDriver driver1) {
+	private WebDriver registerEvents(WebDriver driver1) {
 		EventFiringWebDriver edriver = new EventFiringWebDriver(driver1);
 		ListnersClass listner = new ListnersClass();
 		edriver.register(listner);
@@ -48,7 +49,7 @@ public class BaseWebdriver {
 
 	@AfterMethod(alwaysRun = true)
 	public static void closeBrowser() {
-		
+
 		driver.close();
 	}
 

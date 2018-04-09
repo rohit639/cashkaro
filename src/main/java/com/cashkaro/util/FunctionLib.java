@@ -17,7 +17,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-
 public class FunctionLib {
 
 	private final static WebDriverWait wait = new WebDriverWait(BaseWebdriver.getDriver(), Configuration.getExplicit());
@@ -99,10 +98,10 @@ public class FunctionLib {
 	public static String getrandomString(int length, boolean useLetters, boolean useNumbers) {
 		return RandomStringUtils.random(length, useLetters, useNumbers);
 	}
-	
+
 	public static void scrollDown() {
-		JavascriptExecutor jse = (JavascriptExecutor)BaseWebdriver.getDriver();
+		JavascriptExecutor jse = (JavascriptExecutor) BaseWebdriver.getDriver();
 		jse.executeScript("window.scrollBy(0,250)", "");
 	}
-	
+
 }
